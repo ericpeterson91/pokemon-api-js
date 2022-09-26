@@ -1,3 +1,7 @@
+const pokedex = document.querySelector('#pokedex')
+
+console.log(pokedex)
+
 const fetchPokemon = () => {
   const promises = [];
 
@@ -19,6 +23,15 @@ const fetchPokemon = () => {
 
 const displayPokemon = (pokemon) => {
     console.log(pokemon)
+
+    const pokemonHTMLString = pokemon.map(poke => `
+    <li>
+        <img src='${poke.image}' />
+        <h2>${poke.id}. ${poke.name}</h2>
+        <p>Type: ${poke.type}</p>
+    </li>
+    `).join('')
+    pokedex.innerHTML = pokemonHTMLString;
 }
 
 

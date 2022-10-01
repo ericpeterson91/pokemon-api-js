@@ -2,6 +2,7 @@ body {
     background-color: orangered;
     margin: 0;
     font-family: rubik, sans-serif;
+    color: white;
 }
 
 .card {
@@ -9,6 +10,13 @@ body {
     padding: 40px;
     background-color: #f4f4f4;
     color: #222;
+    text-align: center;
+    max-height: 340px;
+}
+
+.card:hover {
+    animation-name: bounce;
+    animation-duration: 500ms;
 }
 
 .card-title {
@@ -23,10 +31,40 @@ body {
     color: #777;
 }
 
+.card-image {
+    height: 180px;
+}
+
+@keyframes bounce {
+    25% {
+        transform: translateY(-6px)
+    }
+    50% {
+        transform: translateY(0px)
+    }
+    75% {
+        transform: translateY(-2px)
+    }
+    100% {
+        transform: translateY(0px)
+    }
+}
+
 #pokedex {
     padding-inline-start: 0;
     display: grid;
+    margin: 0 30px;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 20px;
 }
 
+.container {
+    padding: 40px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 54px;
+}
